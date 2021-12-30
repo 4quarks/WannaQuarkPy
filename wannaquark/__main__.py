@@ -6,7 +6,6 @@ import sys
 from wannaquark.utils.constants import Constants
 from wannaquark.app import run_encryption, run_decryption
 from wannaquark.utils.log_config import init_logging
-import logging
 
 init_logging()
 

@@ -22,6 +22,7 @@ def write_file_key(write_key=False):
         with open(Cte.KEY_FILENAME, 'w') as f:
             f.write(key)
     logging.info(f"The key generated is {key}")
+    print(f"The key generated is {key}")
     return key
 
 
