@@ -1,9 +1,7 @@
-
-from constants import Constants as Cte
-from targets import write_file_targets, get_targets
-from key_generator import write_key
-from encrypt import write_encrypt
-from decrypt import write_decrypt
+from wannaquark.algorithm.targets import write_file_targets, get_targets
+from wannaquark.algorithm.key_generator import write_key
+from wannaquark.algorithm.encrypt import write_encrypt
+from wannaquark.algorithm.decrypt import write_decrypt
 
 
 if __name__ == "__main__":

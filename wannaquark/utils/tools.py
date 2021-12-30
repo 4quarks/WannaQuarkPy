@@ -1,7 +1,7 @@
 
-from constants import Constants as Cte
+from wannaquark.utils.constants import Constants as Cte
 import os
-
+import logging
 
 def change_bits(input_filename, output_filename, key_token):
     """
@@ -11,6 +11,7 @@ def change_bits(input_filename, output_filename, key_token):
     """
     index = 0
     max_indexes = Cte.ENCRYPTION_LVL - 1
+    bits_changed = True
     try:
         with open(input_filename, 'rb') as f:
             data = f.read()
@@ -22,9 +23,12 @@ def change_bits(input_filename, output_filename, key_token):
                     if index >= max_indexes:
                         index += 1
         except:
-            print(f'failed to decrypt')
+            logging.exception("Failed changing bits (encrypt/decrypt)")
+            bits_changed = False
     except:
-        print("I could't read the input file")
+        logging.exception("The input file could not be read")
+        bits_changed = False
+    return bits_changed
 
 
 def get_file_ext(target_file):

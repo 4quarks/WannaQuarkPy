@@ -1,8 +1,6 @@
-
-import os
 import random
-from datetime import datetime
-from constants import Constants as Cte
+from wannaquark.utils.constants import Constants as Cte
+import logging
 
 
 def generate_key():
@@ -13,15 +11,17 @@ def generate_key():
     for i in range(Cte.ENCRYPTION_LVL):
         # The key will have 16 random Unicode characters
         key += random.choice(char_pool)
-    print('Key generated! ', key.encode('ascii', 'ignore'))
-    return key
+    key_ascii = str(key.encode('ascii', 'ignore'))
+    return key_ascii
 
 
-def write_key():
+def write_file_key(write_key=False):
     key = generate_key()
-    # Write the key
-    with open(Cte.KEY_FILENAME, 'w') as f:
-        f.write(key)
+    if write_key:
+        # Write the key
+        with open(Cte.KEY_FILENAME, 'w') as f:
+            f.write(key)
+    logging.info(f"The key generated is {key}")
     return key
 
 
