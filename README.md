@@ -52,6 +52,7 @@ You can explore the functionalities:
 ```bash
 $ python -m wannaquark -h
 ```
+The command generates a logfile (`wannaquark.log`) where you can see further details.
 
 ### Encrypt
 
@@ -73,6 +74,10 @@ python3 -m wannaquark encrypt folder_to_encrypt -k
 4) Create a document with the list of target files
 ```bash
 python3 -m wannaquark encrypt folder_to_encrypt -t
+```
+4) Encrypt and decrypt the file
+```bash
+python3 -m wannaquark encrypt folder_to_encrypt -d
 ```
 
 ### Decrypt
